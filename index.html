@@ -7,19 +7,23 @@
   </head>
   <body>
     <div id="root"></div>
+
+    <!-- ✅ 正确的 React 版本 -->
+    <script src="https://unpkg.com/react@18.2.0/umd/react.production.min.js"></script>
+    <script src="https://unpkg.com/react-dom@18.2.0/umd/react-dom.production.min.js"></script>
+
+    <!-- ✅ 其他依赖 -->
+    <script src="three.min.js"></script>
     <script src="xr-frame_min.js"></script>
-    <script src="https://unpkg.com/react/umd/react.production.min.js"></script>
-    <script src="https://unpkg.com/react-dom/umd/react-dom.production.min.js"></script>
-    <script src="https://unpkg.com/three@0.153.0/build/three.min.js"></script>
     <script src="gltfeditor.umd.25f55110.js"></script>
+
+    <!-- ✅ 挂载逻辑 -->
     <script>
-  const App = () => React.createElement('div', null, 'Hello GLTF Editor');
-
-  ReactDOM.render(
-    React.createElement(App),
-    document.getElementById('root')
-  );
-</script>
-
+      const App = window.GltfEditorApp || (() => React.createElement('div', null, 'Hello GLTF Editor'));
+      ReactDOM.render(
+        React.createElement(App),
+        document.getElementById('root')
+      );
+    </script>
   </body>
 </html>
