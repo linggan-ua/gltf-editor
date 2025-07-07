@@ -8,11 +8,11 @@
   <body>
     <div id="root"></div>
 
-    <!-- ✅ React 与 ReactDOM：必须和打包时版本一致 -->
-    <script src="https://unpkg.com/react@18.2.0/umd/react.production.min.js"></script>
-    <script src="https://unpkg.com/react-dom@18.2.0/umd/react-dom.production.min.js"></script>
+    <!-- ✅ 正确版本的 React -->
+    <script src="https://unpkg.com/react@17.0.2/umd/react.production.min.js"></script>
+    <script src="https://unpkg.com/react-dom@17.0.2/umd/react-dom.production.min.js"></script>
 
-    <!-- ✅ 使用 CDN 形式引入 Three.js -->
+    <!-- ✅ Three.js 正确版本 -->
     <script src="https://unpkg.com/three@0.153.0/build/three.min.js"></script>
 
     <!-- ✅ 其他依赖 -->
@@ -21,14 +21,10 @@
     <!-- ✅ 你的 UMD 包 -->
     <script src="gltfeditor.umd.25f55110.js"></script>
 
-    <!-- ✅ 手动挂载（如果没打包） -->
+    <!-- ✅ 尝试挂载（如果你不清楚组件名，先测试） -->
     <script>
-      // 这里是临时挂载逻辑，替换为你的真实 App 名称
-      const App = window.GltfEditorApp || (() => React.createElement('div', null, 'Hello GLTF Editor'));
-      ReactDOM.render(
-        React.createElement(App),
-        document.getElementById('root')
-      );
+      const App = window.GltfEditorApp || (() => React.createElement('div', null, 'Hello from GLTF Editor'));
+      ReactDOM.render(React.createElement(App), document.getElementById('root'));
     </script>
   </body>
 </html>
